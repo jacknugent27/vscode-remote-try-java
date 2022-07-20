@@ -1,6 +1,6 @@
-# Run continuous integration
+name: Check Outdated
 
- on: [push] # push, cronjob, etc. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+on: [push] # push, cronjob, etc. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 
 jobs:
   check_updates:
