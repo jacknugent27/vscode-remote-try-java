@@ -1,0 +1,19 @@
+# Run continuous integration
+
+ on: [push] # push, cronjob, etc. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+
+jobs:
+  check_updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Check outdated
+        run: mvn versions:display-dependency-updates
+  check_unused:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Check for unused dependencies
+        run: mvn dependency:analyze 
